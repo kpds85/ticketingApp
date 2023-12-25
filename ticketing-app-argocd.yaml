@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ticketing-app
+  namespace: default
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  project: default
+  source:
+    repoURL: 'https://github.com/kpds85/ticketingApp.git'
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
